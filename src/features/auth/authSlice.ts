@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AuthState, AuthPayload } from "../../types/auth";
+import { AuthState} from "../../types/auth";
 import { signUpAPI } from "../apis/signUpApi";
 import { signInAPIs } from "../apis/signInApis";
 // createSlice holds all your authentication state and logic
