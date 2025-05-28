@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk, isAction } from "@reduxjs/toolkit";
 import { AuthState, AuthPayload } from "../../types/auth";
 import { signInAPI } from "../apis/signInapi";
-import { stat } from "fs";
 import { signUpAPI } from "../apis/signUpApi";
 // createSlice holds all your authentication state and logic
 // payloadAction for type of action and payload
@@ -13,18 +12,24 @@ const initialState: AuthState = {
     token: null,
     loading: false,
     error: null,
-    msg: null
+    msg: null,
+    emailid: null
 }
 
 const authenticationSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        signIn: (state, action: PayloadAction<AuthPayload>) => {
-            state.isAuthenticated = true,
-                state.name = action.payload.name,
-                state.token = action.payload.token
-        },
+        // signIn: (state, action: PayloadAction<AuthPayload>) => {
+        //     state.isAuthenticated = true,
+        //         state.name = action.payload.name,
+        //         state.token = action.payload.token
+        // },
+        // signUp: (state, action: PayloadAction<AuthPayload>) => {
+        //     state.name = action.payload.name,
+        //         state.emailid = action.payload.email,
+        //         state.msg = action.payload.msg
+        // },
         signOut: (state) => {
             state.isAuthenticated = false,
                 state.name = null,
@@ -76,5 +81,5 @@ const authenticationSlice = createSlice({
     }
 })
 
-export const { signIn, signOut } = authenticationSlice.actions
+export const { signOut } = authenticationSlice.actions
 export default authenticationSlice.reducer

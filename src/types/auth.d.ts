@@ -7,6 +7,7 @@ export interface AuthState{
     loading : boolean,
     error : string|null,
     msg : string|null,
+    emailid:string|null
 }
 
 // Same for payload
