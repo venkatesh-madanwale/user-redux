@@ -3,7 +3,7 @@ import { AuthState} from "../../types/auth";
 import { signUpAPI } from "../apis/signUpApi";
 import { signInAPIs } from "../apis/signInApis";
 // createSlice holds all your authentication state and logic
-// payloadAction for type of action and payload 
+// payloadAction for type of action and payload  
 // createAsyncThunk to handle async action e.g. api calls in a clean predictable way without manually dispatching loading success and failure actions
 
 const initialState: AuthState = {
